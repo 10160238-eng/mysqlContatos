@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8081/contato";
+const API_URL = "http://localhost:8080/contato";
 async function carregarContatos() {
   const resposta = await fetch(API_URL);
   const contatos = await resposta.json();
