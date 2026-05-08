@@ -1,11 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documento</title>
-</head>
-<body>
-    <h1>Teste</h1>
-</body>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Contatos</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 30px auto;
+      }
+      input,
+      button {
+        padding: 8px;
+        margin: 4px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      th,
+      td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Cadastro de Contatos</h2>
+    <input id="id" type="hidden" />
+    <input id="nome" placeholder="Nome" />
+    <input id="email" placeholder="Email" />
+    <input id="telefone" placeholder="Telefone" />
+    <button onclick="salvar()">Salvar</button>
+    <button onclick="limparFormulario()">Limpar</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Telefone</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="lista"></tbody>
+    </table>
+    <script src="app.js"></script>
+  </body>
 </html>
