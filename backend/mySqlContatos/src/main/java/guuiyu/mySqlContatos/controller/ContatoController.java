@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(
+        origins = "*",
+        allowedHeaders = "*",
+        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE}
+)
 @RequestMapping("/contato")
 public class ContatoController {
     private final ContatoService service;
@@ -25,6 +30,7 @@ public class ContatoController {
     @PostMapping
     public ResponseEntity<ContatoResponseDTO> create(@RequestBody ContatoRequestDTO newContato){
         ContatoResponseDTO contato = service.create(newContato);
+        System.out.println(newContato);
         return ResponseEntity.status(HttpStatus.CREATED).body(contato);
     }
 }
