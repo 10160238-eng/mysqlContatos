@@ -1,5 +1,6 @@
 package guuiyu.mySqlContatos.controller;
 
+import guuiyu.mySqlContatos.model.ContatoRequestDTO;
 import guuiyu.mySqlContatos.model.ContatoResponseDTO;
 import guuiyu.mySqlContatos.service.ContatoService;
 import org.springframework.http.HttpStatus;
@@ -22,7 +23,7 @@ public class ContatoController {
     }
 
     @PostMapping
-    public ResponseEntity<contatoResponseDTO> create(@RequestBody newContato){
+    public ResponseEntity<ContatoResponseDTO> create(@RequestBody ContatoRequestDTO newContato){
         ContatoResponseDTO contato = service.create(newContato);
         return ResponseEntity.status(HttpStatus.CREATED).body(contato);
     }
